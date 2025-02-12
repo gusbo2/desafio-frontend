@@ -145,11 +145,11 @@
       "type": 1
     },
     {
-      "id": "1731aec4-30be-4776-9cd9-a8d011b6a796",
-      "name": "teste",
-      "description": "",
+      "id": "016693b0-5d89-4662-b06a-f176bf6c2f3a",
+      "name": "teste com o nome bem grande para quebrar o card e a listagem",
+      "description": "teste",
       "createdAt": "2025-02-12",
-      "price": 120,
+      "price": 150,
       "type": 1
     }
   ]

@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <main className="content">
       <div className="row">
-        <div className="col-span-6">
+        <div className="col-span-4 sm:col-span-8 md:col-span-6">
           <Input>
             <Input.Label>Nome</Input.Label>
             <Input.Content>
@@ -68,7 +68,7 @@ export default function Home() {
             </Input.Content>
           </Input>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-2 sm:col-span-4 md:col-span-3">
           <Input>
             <Input.Label>Data</Input.Label>
             <Input.Content>
@@ -76,7 +76,7 @@ export default function Home() {
             </Input.Content>
           </Input>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-2 sm:col-span-4 md:col-span-3">
           <Input>
             <Input.Label>Valor</Input.Label>
             <Input.Content>
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </div>
       <div className="row">
-        <div className="col-span-12">
+        <div className="col-span-4 sm:col-span-8 md:col-span-12">
           <Input>
             <Input.Label>Descrição</Input.Label>
             <Input.Content>
@@ -96,22 +96,23 @@ export default function Home() {
         </div>
       </div>
       <div className="row">
-        <div className="col-span-3"></div>
-        <div className="col-span-3">
+        <div className="col-span-1 md:col-span-3"></div>
+        <div className="col-span-2 sm:col-span-3">
           <Button handleClick={route.back}>
             <Button.Action className="secondary">
               <h1>Cancelar</h1>
             </Button.Action>
           </Button>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-1 sm:hidden"></div>
+        <div className="col-span-1 sm:hidden"></div>
+        <div className="col-span-2 sm:col-span-3">
           <Button handleClick={save}>
             <Button.Action className="primary">
               <h1>Salvar</h1>
             </Button.Action>
           </Button>
         </div>
-        <div className="col-span-3"></div>
       </div>
     </main>
   );

@@ -5,6 +5,7 @@ interface IStringUtil {
   stringToPrice(value: string): number;
   stringToPriceKeepingCommas(value: string): string;
   formatDate(value: string): string;
+  limitNameLength(value: string, maxLength: number): string;
 }
 
 export const StringUtil: IStringUtil = {
@@ -48,5 +49,11 @@ export const StringUtil: IStringUtil = {
       return `${matches[2]}/${matches[1]}/${matches[0]}`;
     }
     return '';
+  },
+  limitNameLength: (value: string, maxLength: number = 30): string => {
+    if (value.length > maxLength) {
+      return `${value.substring(0, maxLength)}...`;
+    }
+    return value;
   }
 }

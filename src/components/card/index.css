@@ -1,0 +1,15 @@
+.card {
+  @apply w-80 h-32 my-3 mx-1 bg-white dark:bg-black text-textSecondary-light rounded-xl border border-textSecondary-light dark:border-textSecondary-dark dark:text-textSecondary-dark;
+}
+
+.card-header {
+  @apply flex w-full my-3 items-center justify-center font-sans text-base;
+}
+
+.card-content {
+  @apply w-full px-3;
+}
+
+.card-content-item {
+  @apply flex w-full mb-3 justify-between;
+}

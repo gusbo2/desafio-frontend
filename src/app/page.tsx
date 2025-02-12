@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, FloatButton, Input, MovementType, Total } from "@/components";
+import { Button, Card, FloatButton, Input, MovementType, Total } from "@/components";
 import { DataTable } from "@/components/datatable";
 import { useAppDispatch, useAppSelector } from "@/database/hooks";
 import { clearState, deleteEntity, setEntity, setList } from "@/database/slices/movement.slice";
@@ -127,7 +127,7 @@ export default function Home() {
         </Button>
       </FloatButton>
       <div className="row">
-        <div className="col-span-1">
+        <div className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-1">
           <Input>
             <Input.Content>
               <select value={filterType} onChange={changeFilterType}>
@@ -137,7 +137,7 @@ export default function Home() {
             </Input.Content>
           </Input>
         </div>
-        <div className="col-span-7">
+        <div className="col-span-3 sm:col-span-6 md:col-span-9 lg:col-span-5">
           <Input>
             <Input.Content>
               <input
@@ -149,7 +149,7 @@ export default function Home() {
             </Input.Content>
           </Input>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-2 sm:col-span-4 md:col-span-6 lg:col-span-3">
           <Input>
             <Input.Content>
               <input
@@ -160,7 +160,7 @@ export default function Home() {
             </Input.Content>
           </Input>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-2 sm:col-span-4 md:col-span-6 lg:col-span-3">
           <Input>
             <Input.Content>
               <select value={movementType} onChange={changeMovementType}>
@@ -201,7 +201,7 @@ export default function Home() {
       </div>
       <div className="row border border-b-textSecondary-light"></div>
       <div className="row">
-        <div className="col-span-12">
+        <div className="hidden col-span-12 md:block">
           <DataTable>
             <DataTable.Header>
               <div className="col-span-5">
@@ -232,21 +232,21 @@ export default function Home() {
               <div className="col-span-1 text-center">Ações</div>
             </DataTable.Header>
             <DataTable.Body>
-              {movements.map((item, index) => (
-                <div className="row" key={index}>
-                  <div className="col-span-5"><p>{item.name}</p></div>
+              {movements.map(item => (
+                <div className="row" key={item.id}>
+                  <div className="col-span-5"><p>{StringUtil.limitNameLength(item.name, 30)}</p></div>
                   <div className="col-span-2 text-center"><p>{StringUtil.formatDate(item.createdAt)}</p></div>
                   <div className="col-span-2 flex justify-center"><MovementType type={item.type} /></div>
                   <div className="col-span-2 text-right"><p>{StringUtil.priceFormat(item.price.toFixed(2))}</p></div>
-                  <div className="flex items-center justify-around col-span-1 mx-2">
-                    <Button handleClick={() => editMovement(item.id)}>
+                  <div className="flex items-center justify-center col-span-1">
+                    <Button className="justify-end mr-2" handleClick={() => editMovement(item.id)}>
                       <Button.Icon>
                         <div className="text-primary-dark">
                           <Edit width={20} />
                         </div>
                       </Button.Icon>
                     </Button>
-                    <Button handleClick={() => deleteMovement(item.id)}>
+                    <Button className="justify-start" handleClick={() => deleteMovement(item.id)}>
                       <Button.Icon>
                         <div className="text-red-600">
                           <Trash2 width={20} />
@@ -258,6 +258,42 @@ export default function Home() {
               ))}
             </DataTable.Body>
           </DataTable>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-span-12 md:hidden">
+          <div className="flex flex-wrap items-center justify-center">
+            {movements.map(item => (
+              <Card key={item.id}>
+                <Card.Header>{StringUtil.limitNameLength(item.name, 30)}</Card.Header>
+                <Card.Content>
+                  <Card.Content.Item>
+                    <p>{StringUtil.formatDate(item.createdAt)}</p>
+                    <p>{StringUtil.priceFormat(item.price.toFixed(2))}</p>
+                  </Card.Content.Item>
+                  <Card.Content.Item>
+                    <MovementType type={item.type} />
+                    <div className="flex">
+                      <Button className="mx-3" handleClick={() => editMovement(item.id)}>
+                        <Button.Icon>
+                          <div className="text-primary-dark">
+                            <Edit width={20} />
+                          </div>
+                        </Button.Icon>
+                      </Button>
+                      <Button handleClick={() => deleteMovement(item.id)}>
+                        <Button.Icon>
+                          <div className="text-red-600">
+                            <Trash2 width={20} />
+                          </div>
+                        </Button.Icon>
+                      </Button>
+                    </div>
+                  </Card.Content.Item>
+                </Card.Content>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </main>
