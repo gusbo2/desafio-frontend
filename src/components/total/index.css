@@ -1,0 +1,23 @@
+.total {
+  @apply flex w-full h-10 items-center justify-between px-2 text-textSecondary-light bg-white border border-textSecondary-light dark:bg-black dark:text-textSecondary-dark dark:border-textSecondary-dark;
+}
+
+.total-description {
+  @apply flex h-full items-center;
+}
+
+.total-description-tag {
+  @apply w-5 h-5 rounded-full mr-2;
+}
+
+.total-output {
+  @apply bg-red-500;
+}
+
+.total-input {
+  @apply bg-primary-dark;
+}
+
+.total-input-output {
+  @apply bg-accent-dark;
+}

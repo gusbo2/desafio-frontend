@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background-light dark:bg-background-dark;
+}
+
+textarea:focus,
+input:focus,
+button:focus {
+  @apply outline-none
+}
+
+.content,
+.row {
+  @apply grid grid-cols-4 gap-4 sm:grid-cols-8 md:grid-cols-12;
+}
+
+.row {
+  @apply mx-4 col-span-4 sm:col-span-8 md:col-span-12;
+}
+
+.content {
+  @apply pt-10;
+}

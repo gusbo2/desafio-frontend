@@ -1,0 +1,19 @@
+.button {
+  @apply flex items-center w-full h-fit font-roboto;
+}
+
+.button-action {
+  @apply flex w-full h-10 rounded-lg text-lg items-center justify-center text-textPrimary-light;
+}
+
+.button-icon {
+  @apply w-fit;
+}
+
+.secondary {
+  @apply bg-red-600 dark:bg-red-400;
+}
+
+.primary {
+  @apply bg-primary-light dark:bg-primary-dark;
+}

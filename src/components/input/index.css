@@ -1,0 +1,29 @@
+.input {
+  @apply w-full;
+}
+
+.input-label {
+  @apply text-sm mx-3 my-1 font-roboto text-textSecondary-light dark:text-textSecondary-dark;
+}
+
+.input-content {
+  @apply w-full h-fit rounded-lg font-roboto text-base text-textSecondary-light dark:text-textSecondary-dark;
+}
+
+.input-content input,
+.input-content select,
+.input-content textarea {
+  @apply w-full h-10 px-3 rounded-lg bg-white dark:bg-black border border-textSecondary-light dark:border-textSecondary-dark;
+}
+
+/* .input-content input[type="date"]::-webkit-calendar {
+  @apply font-roboto text-base text-textSecondary-light bg-background-light border border-textSecondary-light dark:text-textSecondary-dark dark:border-textSecondary-dark dark:bg-background-dark;
+} */
+
+.input-content input[type="date"]::-webkit-calendar-picker-indicator {
+  @apply dark:invert;
+}
+
+.input-content textarea {
+  @apply  min-h-10 h-10 max-h-32 p-2 pb-1 rounded-lg;
+}

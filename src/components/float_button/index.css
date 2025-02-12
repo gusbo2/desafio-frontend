@@ -1,0 +1,3 @@
+.float-button {
+  @apply fixed flex items-center justify-center bottom-24 right-4 rounded-full border border-textPrimary-light bg-primary-light text-textPrimary-light dark:border-textPrimary-dark dark:bg-primary-dark dark:text-textPrimary-dark;
+}

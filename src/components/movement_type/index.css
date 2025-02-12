@@ -1,0 +1,15 @@
+.type {
+  @apply flex
+}
+
+.type-tag {
+  @apply w-5 h-5 rounded-full mr-2;
+}
+
+.type-output {
+  @apply bg-red-600;
+}
+
+.type-input {
+  @apply bg-primary-dark;
+}
